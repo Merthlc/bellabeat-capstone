@@ -226,9 +226,13 @@ Yes. All 11 tables were cleaned and standardized into BigQuery views prior to an
 
 **❓ What surprises did you discover in the data?**
 
-> 💡 **Key Surprise #1:** Weight-tracking days produce no meaningfully higher activity levels than regular days for the same users. Weight tracking is a **symptom** of a disciplined lifestyle — not a cause of it.
+💡 **Key Surprise #1:** Weight-Trackers walk 16% more steps yet burn 6% **fewer** calories than Non-Trackers. This counterintuitive result initially raised data integrity concerns — the discrepancy was significant enough to trigger multiple rounds of validation across the cleaning pipeline. 
 
-> 💡 **Key Surprise #2:** Weight-Trackers experience **24% fewer disturbed sleep minutes** despite going to bed later — their sleep architecture is more efficient, not just longer.
+After confirming data accuracy, the explanation emerged: the caloric gap is likely driven by **gender composition**. Given that males have a 20–30% higher basal metabolic rate than females, the Non-Tracker group's higher burn is consistent with a male-dominant profile — leading to the hypothesis that Weight-Trackers are **predominantly female**, which aligns directly with Bellabeat's core audience.
+
+💡 **Key Surprise #2:** Weight-tracking days produce no meaningfully higher activity levels than regular days for the same users. Weight tracking is a **symptom** of a disciplined lifestyle — not a cause of it.
+
+💡 **Key Surprise #3:** Weight-Trackers experience **24% fewer disturbed sleep minutes** despite going to bed later — their sleep architecture is more efficient, not just longer.
 
 **❓ What trends or relationships did you find in the data?**
 
