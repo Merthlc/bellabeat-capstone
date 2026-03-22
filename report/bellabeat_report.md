@@ -227,7 +227,8 @@ This phase presents the key findings organized into three thematic areas, each s
 
 ### Analysis 1: General Overview
 
-![General Overview](../viz/01_general_overview.png)
+![General Overview](../viz/01.1_general_overview.png)
+![General Overview](../viz/01.2_general_overview.png)
 
 **Conclusion:**
 
@@ -241,7 +242,8 @@ Given that males have a 20–30% higher basal metabolic rate than females, the h
 
 ### Analysis 2: Weight-Logged Day vs Typical Day
 
-![Weight Logged vs Typical Day](../viz/04_weight_logged_vs_typical.png)
+![Weight Logged vs Typical Day](../viz/04.1_weight_logged_vs_typical.png)
+![Weight Logged vs Typical Day](../viz/04.2_weight_logged_vs_typical.png)
 
 **Conclusion:**
 
@@ -257,7 +259,8 @@ This is a critical finding: **weight tracking is an indicator of a disciplined l
 
 ### Analysis 3: Device Usage
 
-![Device Usage](../viz/03_device_usage.png)
+![Device Usage](../viz/03.1_device_usage.png)
+![Device Usage](../viz/03.2_device_usage.png)
 
 **Conclusion:**
 
@@ -273,7 +276,8 @@ Weight-Trackers consistently demonstrate stronger engagement, higher-quality act
 
 ### Analysis 4: Weekend vs Weekday Activity
 
-![Weekend vs Weekday Activity](../viz/05_weekend_weekday.png)
+![Weekend vs Weekday Activity](../viz/05.1_weekend_weekday.png)
+![Weekend vs Weekday Activity](../viz/05.2_weekend_weekday.png)
 
 **Conclusion:**
 
@@ -291,7 +295,8 @@ Weight-Trackers consistently demonstrate stronger engagement, higher-quality act
 
 ### Analysis 5: Sleep Distribution & Efficiency
 
-![Sleep Distribution](../viz/02_sleep_distribution.png)
+![Sleep Distribution](../viz/02.1_sleep_distribution.png)
+![Sleep Distribution](../viz/02.2_sleep_distribution.png)
 
 **Conclusion:**
 
