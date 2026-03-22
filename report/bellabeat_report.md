@@ -276,8 +276,10 @@ These trends reveal **who** the high-engagement user is (disciplined, routine-dr
 
 ### 💬 Conclusion
 
- Weight-Trackers walk 16% more steps daily yet burn 6% fewer calories — an apparent contradiction explained by activity type. They spend 18% more time in **light activity** and are 7% less sedentary, achieving more through sustained low-intensity movement rather than intense bursts.
+Weight-Trackers walk 16% more steps daily yet burn 6% fewer calories — an apparent contradiction explained by activity type. They spend 18% more time in **light activity** and are 7% less sedentary, achieving more through sustained low-intensity movement rather than intense bursts.
+
 Average intensity is 18% higher (0.26 vs 0.22), confirming more consistent daily engagement. Heart rate is nearly identical, suggesting comparable cardiovascular baselines.
+
 Given that males have a 20–30% higher basal metabolic rate than females, the higher caloric burn in the Non-Tracker group is consistent with a male-dominant composition. This supports the hypothesis that the **Weight-Tracker group is predominantly female** — Bellabeat's core audience.
 
 ---
@@ -297,11 +299,11 @@ Given that males have a 20–30% higher basal metabolic rate than females, the h
 | Avg Fairly Active Mins | 11.8 | 11.1 | **0%** |
 | Avg Very Active Mins | 20.8 | 15.1 | **-6% 🔴** |
 
-> **💬 Conclusion:**
->
-> Weight tracking does **not** function as a daily motivational trigger. Activity on weight-logging days is virtually identical to normal days — 0% difference in steps, 0% difference in sedentary minutes, 0% difference in fairly active minutes.
->
-> This is a critical finding: **weight tracking is an indicator of a disciplined lifestyle, not a short-term behavioral spike.** These users are consistently active every single day — the act of weighing in does not change their behavior that day.
+### 💬 Conclusion
+
+Weight tracking does **not** function as a daily motivational trigger. Activity on weight-logging days is virtually identical to normal days — 0% difference in steps, 0% difference in sedentary minutes, 0% difference in fairly active minutes.
+
+This is a critical finding: **weight tracking is an indicator of a disciplined lifestyle, not a short-term behavioral spike.** These users are consistently active every single day — the act of weighing in does not change their behavior that day.
 
 ---
 
@@ -327,15 +329,15 @@ Given that males have a 20–30% higher basal metabolic rate than females, the h
 | Avg Zombie Days | **2.6** | 4.4 | **-41% ✅** |
 | Avg Days Dropped Early | **2** | 2.8 | **-29% ✅** |
 
-> **💬 Conclusion:**
->
-> Weight-Trackers demonstrate stronger engagement and more stable retention across every metric measured.
->
-> - **91% loyalty** vs 67% — nearly all Weight-Trackers stay active until the end of the observation period
-> - **41% fewer zombie days** — Non-Trackers disengage gradually; Weight-Trackers either stay active or churn decisively
-> - **12-point activity consistency gap** — weight tracking correlates with disciplined, sustained physical activity, not sporadic engagement
->
-> Non-Trackers don't quit suddenly — **they fade.** Zombie days are the early warning signal.
+### 💬 Conclusion
+
+Weight-Trackers demonstrate stronger engagement and more stable retention across every metric measured.
+
+- **91% loyalty** vs 67% — nearly all Weight-Trackers stay active until the end of the observation period
+- **41% fewer zombie days** — Non-Trackers disengage gradually; Weight-Trackers either stay active or churn decisively
+- **12-point activity consistency gap** — weight tracking correlates with disciplined, sustained physical activity, not sporadic engagement
+
+Non-Trackers don't quit suddenly — **they fade.** Zombie days are the early warning signal.
 
 ---
 
@@ -351,15 +353,15 @@ Given that males have a 20–30% higher basal metabolic rate than females, the h
 | Avg Steps | 9,092 | 9,019 | 8,364 | 7,848 |
 | Avg Very Active Mins | 18.4 | **20.4 (+11% ✅)** | 22 | **19.8 (-10% 🔴)** |
 | Avg Sedentary Mins | 943 | **873 (-7% ✅)** | 990 | **938 (-5% 🔴)** |
-| Avg Calories | 2,300 | **2,445 (+6% ✅)** | 2,459 | **2,403 (-2 🔴%)** |
+| Avg Calories | 2,300 | **2,445 (+6% ✅)** | 2,459 | **2,403 (-2% 🔴)** |
 
-> **💬 Conclusion:**
->
-> **The Consistency Advantage:** Weight-Trackers increase Very Active Minutes by **+11%** and burn **+6%** more calories on weekends. Weekends are an opportunity for active engagement, not behavioral decline.
->
-> **The Weekend Slump:** Non-Trackers drop **-6% in steps** and **-10% in Very Active Minutes** on weekends. The gap between segments widens: Weight-Trackers outperform by 9% on weekdays and **15% on weekends**.
->
-> **The Shared Positive:** Both segments reduce sedentary time on weekends — users across both groups are more physically mobile and less desk-bound on their days off.
+### 💬 Conclusion
+
+**The Consistency Advantage:** Weight-Trackers increase Very Active Minutes by **+11%** and burn **+6%** more calories on weekends. Weekends are an opportunity for active engagement, not behavioral decline.
+
+**The Weekend Slump:** Non-Trackers drop **-6% in steps** and **-10% in Very Active Minutes** on weekends. The gap between segments widens: Weight-Trackers outperform by 9% on weekdays and **15% on weekends**.
+
+**The Shared Positive:** Both segments reduce sedentary time on weekends — users across both groups are more physically mobile and less desk-bound on their days off.
 
 ---
 
@@ -373,17 +375,17 @@ Given that males have a 20–30% higher basal metabolic rate than females, the h
 
 ![Sleep Distribution](../viz/05_sleep_distribution.png)
 
-> **💬 Conclusion:**
->
-> Weight-Trackers tend to sleep **later** than Non-Trackers. Non-Trackers cluster around the 00:00–01:00 window; Weight-Trackers are more spread across late-night hours with notable presence in the 02:00–04:00 range.
->
-> Despite sleeping later, Weight-Trackers achieve significantly better sleep quality:
-> - **24% fewer disturbed sleep minutes**
-> - **7% more actual sleep time** relative to time in bed
->
-> Their sleep architecture is more efficient — they fall asleep faster and stay asleep longer once in bed.
->
-> ⚠️ **Both groups sleep below the recommended 8 hours** — an underserved wellness need that Bellabeat is well-positioned to address.
+### 💬 Conclusion
+
+Weight-Trackers tend to sleep **later** than Non-Trackers. Non-Trackers cluster around the 00:00–01:00 window; Weight-Trackers are more spread across late-night hours with notable presence in the 02:00–04:00 range.
+
+Despite sleeping later, Weight-Trackers achieve significantly better sleep quality:
+- **24% fewer disturbed sleep minutes**
+- **7% more actual sleep time** relative to time in bed
+
+Their sleep architecture is more efficient — they fall asleep faster and stay asleep longer once in bed.
+
+⚠️ **Both groups sleep below the recommended 8 hours** — an underserved wellness need that Bellabeat is well-positioned to address.
 
 ---
 
@@ -403,15 +405,15 @@ Given that males have a 20–30% higher basal metabolic rate than females, the h
 | Weekday Peak Hour | **15:00–17:00** (planned) | 11:00–12:00 & 18:00–20:00 (reactive) |
 | Curve Volatility | **Low — smooth** | High — sharp spikes |
 
-> **💬 Conclusion:**
->
-> **Weekend Discipline:** Weight-Trackers increase caloric expenditure **+4%** on weekends; Non-Trackers drop **-3%**.
->
-> **Structured vs Reactive (Weekday):** Weight-Trackers peak sharply at **15:00–17:00** (~170 cal/hour) — consistent with planned workouts. Non-Trackers show reactive evening spikes at **18:00–20:00**, suggesting post-work compensatory activity.
->
-> **Weekend Convergence:** On weekends, the gap narrows. Both groups show elevated mid-day activity, but Weight-Trackers maintain smoother transitions while Non-Trackers spike sharply in the late evening.
->
-> **Core Differentiator:** Weight tracking functions as a **behavioral anchor** — not increasing total activity at every hour, but strongly correlating with temporal consistency and planned energy expenditure throughout the day.
+### 💬 Conclusion
+
+**Weekend Discipline:** Weight-Trackers increase caloric expenditure **+4%** on weekends; Non-Trackers drop **-3%**.
+
+**Structured vs Reactive (Weekday):** Weight-Trackers peak sharply at **15:00–17:00** (~170 cal/hour) — consistent with planned workouts. Non-Trackers show reactive evening spikes at **18:00–20:00**, suggesting post-work compensatory activity.
+
+**Weekend Convergence:** On weekends, the gap narrows. Both groups show elevated mid-day activity, but Weight-Trackers maintain smoother transitions while Non-Trackers spike sharply in the late evening.
+
+**Core Differentiator:** Weight tracking functions as a **behavioral anchor** — not increasing total activity at every hour, but strongly correlating with temporal consistency and planned energy expenditure throughout the day.
 
 ---
 
