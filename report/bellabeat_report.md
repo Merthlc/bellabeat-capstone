@@ -496,3 +496,9 @@ Additionally, expanding the dataset beyond 33 users and updating it beyond 2016 
 | In-app engagement data | Complement behavioral patterns with product usage data |
 | Longitudinal multi-year data | Assess seasonal stability of Weight-Tracker behavior |
 | Bellabeat user data | Directly compare against FitBit findings; assess transferability |
+
+## 👤 Author
+
+**[Kerim Mert Halıcı]**  
+Google Data Analytics Certificate — Capstone Project  
+[LinkedIn](https://www.linkedin.com/in/kmerthalici/) · [GitHub](https://github.com/Merthlc)
