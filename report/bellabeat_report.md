@@ -294,10 +294,10 @@ These trends reveal **who** the high-engagement user is (disciplined, routine-dr
 | Metric | Typical Day | Weight-Logged Day | Diff |
 |---|---|---|---|
 | Avg Steps | 8,823 | 8,265 | **0%** |
-| Avg Calories | 2,457 | 2,271 |** -6% 🔴** |
+| Avg Calories | 2,457 | 2,271 | **-6% 🔴** |
 | Avg Sedentary Mins | 935.7 | 936.4 | **0%** |
 | Avg Fairly Active Mins | 11.8 | 11.1 | **0%** |
-| Avg Very Active Mins | 20.8 | 15.1 |** -6% 🔴** |
+| Avg Very Active Mins | 20.8 | 15.1 | **-6% 🔴** |
 
 > **💬 Conclusion:**
 >
@@ -351,9 +351,9 @@ These trends reveal **who** the high-engagement user is (disciplined, routine-dr
 | Metric | WT Weekday | WT Weekend | NT Weekday | NT Weekend |
 |---|---|---|---|---|
 | Avg Steps | 9,092 | 9,019 | 8,364 | 7,848 |
-| Avg Very Active Mins | 18.4 | **20.4 (+11%)** | 22 | **19.8 (-10%)** |
-| Avg Sedentary Mins | 943 | **873 (-7%)** | 990 | **938 (-5%)** |
-| Avg Calories | 2,300 | **2,445 (+6%)** | 2,459 | **2,403 (-2%)** |
+| Avg Very Active Mins | 18.4 | **20.4 (+11% ✅)** | 22 | **19.8 (-10% 🔴)** |
+| Avg Sedentary Mins | 943 | **873 (-7% ✅)** | 990 | **938 (-5% 🔴)** |
+| Avg Calories | 2,300 | **2,445 (+6% ✅)** | 2,459 | **2,403 (-2 🔴%)** |
 
 > **💬 Conclusion:**
 >
