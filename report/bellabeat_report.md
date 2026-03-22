@@ -274,13 +274,11 @@ These trends reveal **who** the high-engagement user is (disciplined, routine-dr
 | Avg Intensity | 0.26 | 0.22 | **+18% ✅** |
 | Avg Heart Rate | 80.68 | 80.28 | **~0%** |
 
-> **💬 Conclusion:**
->
-> Weight-Trackers walk 16% more steps daily yet burn 6% fewer calories — an apparent contradiction explained by activity type. They spend 18% more time in **light activity** and are 7% less sedentary, achieving more through sustained low-intensity movement rather than intense bursts.
->
-> Average intensity is 18% higher (0.26 vs 0.22), confirming more consistent daily engagement. Heart rate is nearly identical, suggesting comparable cardiovascular baselines.
->
-> Given that males have a 20–30% higher basal metabolic rate than females, the higher caloric burn in the Non-Tracker group is consistent with a male-dominant composition. This supports the hypothesis that the **Weight-Tracker group is predominantly female** — Bellabeat's core audience.
+### 💬 Conclusion
+
+ Weight-Trackers walk 16% more steps daily yet burn 6% fewer calories — an apparent contradiction explained by activity type. They spend 18% more time in **light activity** and are 7% less sedentary, achieving more through sustained low-intensity movement rather than intense bursts.
+Average intensity is 18% higher (0.26 vs 0.22), confirming more consistent daily engagement. Heart rate is nearly identical, suggesting comparable cardiovascular baselines.
+Given that males have a 20–30% higher basal metabolic rate than females, the higher caloric burn in the Non-Tracker group is consistent with a male-dominant composition. This supports the hypothesis that the **Weight-Tracker group is predominantly female** — Bellabeat's core audience.
 
 ---
 
