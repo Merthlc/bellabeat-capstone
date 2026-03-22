@@ -73,6 +73,7 @@ This phase documents all data cleaning, transformation, and validation steps per
 ## 3.1 Tool Selection
 
 Google BigQuery was selected as the primary processing tool due to the scale and granularity of the dataset. Minute-level tables contain millions of rows, making a spreadsheet-based approach impractical for data processing. BigQuery's SQL environment enables reproducible, auditable transformations through views, which also serve as living documentation of the cleaning logic applied to each table.
+
 Microsoft Excel was used as the visualization and presentation layer. Once the cleaned views were finalized in BigQuery, aggregated query outputs were exported to Excel for dashboard creation, chart design, and final visual presentation of findings.
 
 ## 3.2 Initial Inspection
