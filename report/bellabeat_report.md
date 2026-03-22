@@ -373,7 +373,8 @@ Non-Trackers don't quit suddenly — **they fade.** Zombie days are the early wa
 
 ### 📈 Analysis 5: Sleep Distribution & Efficiency
 
-![Sleep Distribution](../viz/05_sleep_distribution.png)
+![Sleep Distribution](../viz/05.1_sleep_distribution.png)
+![Sleep Distribution](../viz/05.2_sleep_distribution.png)
 
 ### 💬 Conclusion
 
