@@ -2,6 +2,7 @@
 ### Google Data Analytics Professional Certificate — Capstone Project
 
 ![SQL](https://img.shields.io/badge/Tool-Google%20BigQuery-blue?logo=google-cloud)
+![Excel](https://img.shields.io/badge/Tool-Microsoft%20Excel-217346?logo=microsoft-excel&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Data](https://img.shields.io/badge/Data-FitBit%20Fitness%20Tracker-orange)
 
@@ -34,7 +35,7 @@ bellabeat-capstone/
 └── sql/
     ├── analytics_queries/
     │   └── (queries)
-    ├── null_duplicate_check/
+    ├── data_quality_check/
     │   └── (queries)
     └── view_building/
         └── (queries)
@@ -60,6 +61,7 @@ bellabeat-capstone/
 | Google BigQuery (SQL) | Data storage, cleaning, and analysis |
 | PARSE_DATETIME / TRIM / COUNTIF | Data transformation and validation |
 | BigQuery Views | Reproducible cleaning logic |
+| Microsoft Excel | Data visualization, dashboard creation, and final presentation |
 
 ---
 
