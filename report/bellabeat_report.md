@@ -294,10 +294,10 @@ These trends reveal **who** the high-engagement user is (disciplined, routine-dr
 | Metric | Typical Day | Weight-Logged Day | Diff |
 |---|---|---|---|
 | Avg Steps | 8,823 | 8,265 | **0%** |
-| Avg Calories | 2,457 | 2,271 | -6% |
+| Avg Calories | 2,457 | 2,271 |** -6% 🔴** |
 | Avg Sedentary Mins | 935.7 | 936.4 | **0%** |
 | Avg Fairly Active Mins | 11.8 | 11.1 | **0%** |
-| Avg Very Active Mins | 20.8 | 15.1 | -6% |
+| Avg Very Active Mins | 20.8 | 15.1 |** -6% 🔴** |
 
 > **💬 Conclusion:**
 >
