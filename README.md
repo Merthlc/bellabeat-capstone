@@ -59,8 +59,6 @@ bellabeat-capstone/
 | Tool | Purpose |
 |---|---|
 | Google BigQuery (SQL) | Data storage, cleaning, and analysis |
-| PARSE_DATETIME / TRIM / COUNTIF | Data transformation and validation |
-| BigQuery Views | Reproducible cleaning logic |
 | Microsoft Excel | Data visualization, dashboard creation, and final presentation |
 
 ---
