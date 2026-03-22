@@ -10,8 +10,8 @@
 
 ## 📋 Table of Contents
 - [Phase 1 — Ask](#-phase-1-ask)
-- [Phase 2 — Prepare](#-phase-2-prepare)
-- [Phase 3 — Process](#-phase-3-process)
+- [Phase 2 — Prepare](#️-phase-2-prepare)
+- [Phase 3 — Process](#️-phase-3-process)
 - [Phase 4 — Analyze](#-phase-4-analyze)
 - [Phase 5 — Share](#-phase-5-share)
 - [Phase 6 — Act](#-phase-6-act)
@@ -125,70 +125,88 @@ A column-level null check was performed using `COUNTIF(column IS NULL)` across a
 <summary><b>📄 Click to expand — All 11 Tables</b></summary>
 
 ### 1. Daily Activity Table
-- **Validation Thresholds:** Records with fewer than 2,000 steps, less than 1,200 calories, and more than 1,380 sedentary minutes were excluded as non-wear indicators.
-- **Null Management:** No critical null values found after applying activity thresholds.
-- **Conversion:** ID data converted to STRING for consistent joins.
+
+- **Validation Thresholds:** Data quality was ensured by establishing a "Valid Day" criteria. Records with fewer than 2,000 steps, less than 1,200 calories, and more than 1,380 sedentary minutes were excluded, as these values typically indicate non-wear time or device sync issues rather than actual user behavior.
+- **Null Management:** Verified key metrics (Steps, Calories, Active Minutes) for completeness. No critical null values were found after applying the activity thresholds.
+- **Conversion:** ID data converted to STRING for consistent joins across all tables.
 
 ### 2. Hourly Calories Table
-- **Completeness Check (24-Hour Rule):** Only days with a full 24-hour cycle were included to prevent skewed averages.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Data Type Correction:** Timestamp strings converted to DATETIME.
+
+- **Completeness Check (24-Hour Rule):** Only days with a full 24-hour cycle of recordings were included. This prevented hourly averages from being skewed by days with partial data (e.g., a device being charged for half a day).
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table to ensure hourly analysis only reflects valid activity days.
+- **Data Type Correction:** Converted timestamp strings into standardized DATETIME formats to enable precise hourly extraction and time-series analysis.
 
 ### 3. Hourly Intensities Table
-- **Completeness Check (24-Hour Rule):** Only complete days included.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Metric Retention:** Both `Total_Intensity` and `Average_Intensity` preserved.
-- **Data Type Correction:** `Activity_Hour` converted to DATETIME; hour-of-day extracted.
+
+- **Completeness Check (24-Hour Rule):** Only days with a full 24-hour cycle of recordings were included. This ensured that intensity averages accurately reflect complete daily activity patterns, preventing distortions caused by partial recording days.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table to guarantee that hourly intensity records correspond exclusively to validated activity days. Any records belonging to days that failed the activity thresholds were automatically excluded.
+- **Metric Retention:** Both `Total_Intensity` and `Average_Intensity` fields were preserved — total intensity captures overall exertion volume per hour, while average intensity allows fair comparison across users with different recording frequencies.
+- **Data Type Correction:** Converted the `Activity_Hour` timestamp strings into standardized DATETIME formats, with hour-of-day extracted as a separate integer field.
 
 ### 4. Hourly Steps Table
-- **Completeness Check (24-Hour Rule):** Only complete days included.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Metric Retention:** `Steps` preserved at hourly grain.
-- **Data Type Correction:** `Activity_hour` converted to DATETIME.
+
+- **Completeness Check (24-Hour Rule):** Only days with a full 24-hour cycle of recordings were included to ensure step distributions reflect genuine activity patterns.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table. Any step records from days that failed the minimum threshold criteria were automatically excluded.
+- **Metric Retention:** The `Steps` field was preserved at the hourly grain to enable time-of-day analysis, allowing identification of peak movement windows and sedentary hours.
+- **Data Type Correction:** Converted the `Activity_hour` timestamp strings into standardized DATETIME formats, with hour-of-day extracted as a separate integer field.
 
 ### 5. Heartrate Seconds Table
-- **Completeness Check (Valid Days Only):** Only validated activity days retained.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Granularity Preservation:** Full `heartrate_time` retained at second-level precision.
-- **Dual Time Reference:** Both full timestamp and `hour_of_day` integer included.
-- **Data Type Correction:** `Value` renamed to `heart_rate`.
+
+- **Completeness Check (Valid Days Only):** Only records belonging to days that passed the Daily Activity validation thresholds were retained. Given second-level granularity, partial days could severely skew resting and peak heart rate calculations.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table to anchor all heart rate readings to validated activity days, preventing non-wear readings from contaminating the analysis.
+- **Granularity Preservation:** The full `heartrate_time` timestamp was retained at second-level precision to enable fine-grained analyses such as identifying peak heart rate moments and heart rate recovery speed.
+- **Dual Time Reference:** Both the full `heartrate_time` field and an extracted `hour_of_day` integer were included to support both granular and hourly aggregations within the same view.
+- **Data Type Correction:** Converted the `Time` timestamp strings into standardized DATETIME formats. The `Value` field was renamed to `heart_rate` for readability and semantic clarity.
 
 ### 6. Minute Calories Table
-- **Completeness Check (Valid Days Only):** Only validated activity days retained.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Granularity Aggregation:** `hour_of_day` extracted for flexible aggregation.
-- **Data Type Correction:** `Activity_Minute` converted to DATETIME.
+
+- **Completeness Check (Valid Days Only):** Only records belonging to validated activity days were retained. Partial days could introduce disproportionate gaps in caloric burn patterns at minute-level granularity.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table. Records from days that failed thresholds were automatically excluded.
+- **Granularity Aggregation:** The `hour_of_day` field was extracted to enable flexible aggregation supporting both minute-level and hourly caloric burn analyses within the same view.
+- **Data Type Correction:** Converted the `Activity_Minute` timestamp strings into standardized DATETIME formats, with `activity_date` and `hour_of_day` derived as separate fields.
 
 ### 7. Minute Intensities Table
-- **Completeness Check (Valid Days Only):** Only validated activity days retained.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Metric Retention:** `Intensity` preserved at minute grain.
-- **Granularity Aggregation:** `hour_of_day` extracted.
+
+- **Completeness Check (Valid Days Only):** Only validated activity days were retained. Incomplete days could distort the distribution of low, moderate, and high intensity periods throughout the day.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table to ensure all minute-level intensity records are tied exclusively to validated days.
+- **Metric Retention:** The `Intensity` field was preserved at the minute grain to enable classification of activity levels, identification of sustained high-intensity intervals, and intensity zone transition analysis.
+- **Granularity Aggregation:** The `hour_of_day` field was extracted to support both minute-level and hourly intensity summaries.
+- **Data Type Correction:** Converted the `Activity_Minute` timestamp strings into standardized DATETIME formats.
 
 ### 8. Minute Sleep Table
-- **Duplicate Removal:** `SELECT DISTINCT` within CTE (`unique_sleep`) eliminated 525 duplicate records — performed first before any other cleaning.
-- **Completeness Check (Valid Days Only):** Only validated activity days retained.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Granularity Preservation:** Full `sleep_time` retained at minute-level precision.
-- **Metric Retention:** Both `sleep_state` and `logId` preserved.
+
+- **Duplicate Removal:** Unlike other tables, the Minute Sleep table required an explicit deduplication step. A `SELECT DISTINCT` was applied within a CTE (`unique_sleep`) to eliminate the 525 duplicate records identified during the initial audit. This step was performed first to ensure all downstream operations were conducted on a clean, unique dataset.
+- **Completeness Check (Valid Days Only):** Only sleep records belonging to validated activity days were retained, enabling meaningful correlations between sleep quality and daily movement behavior.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table to anchor all minute-level sleep records to validated days.
+- **Granularity Preservation:** The full `sleep_time` timestamp was retained at minute-level precision alongside the extracted `hour_of_day` field, supporting both granular analyses (sleep onset and wake-up time detection) and hourly distributions.
+- **Metric Retention:** Both `sleep_state` and `logId` fields were preserved. The `sleep_state` field enables sleep stage classification per minute, while `logId` allows individual sleep sessions to be tracked and grouped independently.
+- **Data Type Correction:** Converted the `Activity_Minute` timestamp strings into standardized DATETIME formats at the CTE level.
 
 ### 9. Minute Steps Table
-- **Completeness Check (Valid Days Only):** Only validated activity days retained.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Metric Retention:** `Steps` preserved at minute grain.
-- **Granularity Aggregation:** `hour_of_day` extracted.
+
+- **Completeness Check (Valid Days Only):** Only validated activity days were retained. Incomplete days could introduce misleading gaps in movement patterns at minute-level granularity.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table. Records from days that failed thresholds were automatically excluded.
+- **Metric Retention:** The `Steps` field was preserved at the minute grain to enable identification of burst activity periods, sustained walking intervals, and transitions between active and sedentary minutes.
+- **Granularity Aggregation:** The `hour_of_day` field was extracted to support both minute-level and hourly step distribution summaries.
+- **Data Type Correction:** Converted the `Activity_Minute` timestamp strings into standardized DATETIME formats.
 
 ### 10. Weight Log Table
-- **User-Level Filtering:** `WHERE IN` subquery used (not date-level JOIN) to preserve infrequent weigh-in records.
-- **Null Management:** `fat` column (31 nulls) retained to preserve BMI and weight metrics.
-- **Metric Retention:** `Weight_kg`, `Weight_pounds`, `fat`, `BMI`, `is_manual_report` all preserved.
-- **Session Tracking:** `LogId` preserved for individual session tracking.
+
+- **User-Level Filtering:** Unlike other tables that join on both `Id` and `activity_date`, the Weight Log table was filtered at the user level only. A `WHERE IN` subquery was applied to retain records belonging to users present in the cleaned Daily Activity table. This approach was preferred because weight measurements are infrequent and may not coincide with a tracked activity day — a date-level INNER JOIN would have unnecessarily eliminated valid weight records.
+- **Null Management:** The `fat` column contains 31 null records. Rather than excluding these rows entirely, the field was retained to preserve all other valid metrics (BMI, weight) for those users. Downstream analyses involving the `fat` field should account for its incompleteness accordingly.
+- **Metric Retention:** All key body composition fields — `Weight_kg`, `Weight_pounds`, `fat`, `BMI` — were preserved. The `is_manual_report` flag was retained to allow differentiation between automatically synced and manually entered records.
+- **Session Tracking:** The `LogId` field was preserved to enable individual weigh-in sessions to be uniquely identified and grouped.
+- **Data Type Correction:** Converted the `Date` timestamp strings into standardized DATE formats.
 
 ### 11. Minute MET Table
-- **Completeness Check (Valid Days Only):** Only validated activity days retained.
-- **Relational Integrity:** INNER JOIN with cleaned Daily Activity table.
-- **Metric Retention:** `METs` preserved — body-weight-independent energy expenditure measure.
-- **Granularity Aggregation:** `hour_of_day` extracted.
+
+- **Completeness Check (Valid Days Only):** Only validated activity days were retained. Incomplete days could significantly distort metabolic intensity profiles at minute-level granularity.
+- **Relational Integrity:** An INNER JOIN was performed with the cleaned Daily Activity table to ensure all minute-level MET records are tied to validated days.
+- **Metric Retention:** The `METs` field was preserved at the minute grain. MET values provide a standardized, body-weight-independent measure of energy expenditure, making this table particularly valuable for comparing activity intensity across users with different physical profiles.
+- **Granularity Aggregation:** The `hour_of_day` field was extracted to support both minute-level and hourly metabolic intensity summaries.
+- **Data Type Correction:** Converted the `Activity_Minute` timestamp strings into standardized DATETIME formats.
+
+---
 
 </details>
 
